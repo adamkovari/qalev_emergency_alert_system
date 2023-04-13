@@ -11,7 +11,6 @@
 	<groupId>com.qualysoft.devops.seminar</groupId>
 	<artifactId>qalev-ack-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>qalev-ack-service</name>
 	<description>Ack Service for QALÉV Emergency Alert System</description>
 	<properties>
@@ -38,11 +37,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
