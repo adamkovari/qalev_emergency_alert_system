@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: "qalev-ack-service"
+    server:
+        port: 8081
+    config:
+        import: "./properties.yml"
+springdoc:
+    api-docs:
+        path: /api-docs

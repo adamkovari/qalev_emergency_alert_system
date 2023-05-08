@@ -1,0 +1,45 @@
+version: '1'
+services:
+    report-service:
+        container_name: report-service
+        build:
+            context: ./qalev-report-service
+            dockerfile: ./Dockerfile
+        ports:
+            - "8080:8080"
+        stdin_open: true 
+        networks:
+            - qalev-network
+        depends_on:
+            - qalevDB
+    ack-service:
+        container_name: ack-service
+        build:
+            context: ./qalev-ack-service
+            dockerfile: ./Dockerfile
+        ports:
+            - "8081:8081"
+        networks:
+            - qalev-network
+        depends_on:
+            - qalevDB
+    qalevDB:
+        container_name: qalevDB
+        restart: unless-stopped
+        image: postgres:12.0-alpine
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: 1234
+            POSTGRES_DB: qalevDB
+        volumes:
+            - qalev-data:/var/lib/postgresql/data/
+        ports:
+            - "5432:5432"
+volumes:
+    qalev-data:
+        name: qalev-data
+    
+networks:
+    qalev-network:
+        name: qalev-network
+        driver: bridge

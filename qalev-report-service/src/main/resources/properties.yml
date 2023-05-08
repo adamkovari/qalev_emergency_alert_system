@@ -1,0 +1,13 @@
+qalev-report-service:
+    config: test
+    qalevAckServices:
+        - url: "localhost"
+          port: 8081
+          role: police
+        - url: "localhost"
+          port: 8082
+          role: emergency
+        - url: "localhost"
+          port: 8083
+          role: firefighters
+        

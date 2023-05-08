@@ -10,6 +10,4 @@ COPY --from=maven-builder qalev-ack-app/target/qalev-ack-service-0.0.1-SNAPSHOT.
 WORKDIR /qalev-ack-service
 
 EXPOSE 8081
-#ENTRYPOINT ["java","--port=8081","-jar","qalev-ack-service-0.0.1-SNAPSHOT.jar"]
-#ENTRYPOINT ["java ${JAVA_OPTS} -jar qalev-ack-service-0.0.1-SNAPSHOT.jar"]
-ENTRYPOINT ["java -jar -Dserver.port=8081 qalev-ack-service-0.0.1-SNAPSHOT.jar --server.port=8081"]
+ENTRYPOINT ["java", "-jar", "qalev-ack-service-0.0.1-SNAPSHOT.jar"]

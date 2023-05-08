@@ -1,0 +1,5 @@
+qalev-ack-service:
+    config: test
+    qalev-report-service:
+        url: "localhost"
+        port: 8080
